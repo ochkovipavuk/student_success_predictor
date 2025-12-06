@@ -1,0 +1,9 @@
+pycache/
+__pycache__/
+*.so
+.venv/
+*.png
+*.pkl
+*.bif
+*.csv
+*.pyc

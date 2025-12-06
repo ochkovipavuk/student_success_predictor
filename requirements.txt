@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+umap-learn
+pgmpy
+networkx
+scipy
+joblib
+openpyxl
