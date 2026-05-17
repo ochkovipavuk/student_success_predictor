@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Use Case — Academic Performance Prediction System</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f8fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 40px;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 20px;
+  }
+
+  .diagram-wrap {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 860px;
+    width: 100%;
+  }
+
+  svg {
+    width: 100%;
+  }
+
+  .uc-title { font: 600 13px 'Segoe UI'; fill: #111; }
+  .uc-sub   { font: 400 11px 'Segoe UI'; fill: #555; }
+  .actor-name { font: 600 13px 'Segoe UI'; fill: #374151; }
+  .actor-role { font: 400 11px 'Segoe UI'; fill: #9ca3af; }
+  .sys-label  { font: 400 11px 'Segoe UI'; fill: #9ca3af; }
+  .rel-label  { font: 400 10px 'Segoe UI'; fill: #9ca3af; font-style: italic; }
+
+  /* ALL use cases одинаковые */
+  .uc ellipse {
+    fill: #ffffff;
+    stroke: #000000;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>Use Case Diagram</h1>
+<p class="subtitle">Academic Performance Prediction System</p>
+
+<div class="diagram-wrap">
+<svg viewBox="0 0 820 660" xmlns="http://www.w3.org/2000/svg">
+
+<rect x="190" y="40" width="450" height="580"
+      rx="14" fill="#fafafa" stroke="#d1d5db"
+      stroke-width="1.2" stroke-dasharray="8 5"/>
+
+<text class="sys-label" x="415" y="32" text-anchor="middle">
+  Performance Prediction System
+</text>
+
+<!-- Actor 1 -->
+<g>
+  <circle cx="80" cy="248" r="18" fill="none" stroke="#6b7280"/>
+  <line x1="80" y1="266" x2="80" y2="312" stroke="#6b7280"/>
+  <line x1="52" y1="286" x2="108" y2="286" stroke="#6b7280"/>
+  <line x1="80" y1="312" x2="56" y2="342" stroke="#6b7280"/>
+  <line x1="80" y1="312" x2="104" y2="342" stroke="#6b7280"/>
+  <text class="actor-name" x="80" y="360" text-anchor="middle">Analyst</text>
+  <text class="actor-role" x="80" y="376" text-anchor="middle">/ Researcher</text>
+</g>
+
+<!-- Actor 2 -->
+<g>
+  <circle cx="742" cy="388" r="18" fill="none" stroke="#6b7280"/>
+  <line x1="742" y1="406" x2="742" y2="452" stroke="#6b7280"/>
+  <line x1="714" y1="426" x2="770" y2="426" stroke="#6b7280"/>
+  <line x1="742" y1="452" x2="718" y2="482" stroke="#6b7280"/>
+  <line x1="742" y1="452" x2="766" y2="482" stroke="#6b7280"/>
+  <text class="actor-name" x="742" y="500" text-anchor="middle">Teacher</text>
+  <text class="actor-role" x="742" y="516" text-anchor="middle">/ Administrator</text>
+</g>
+
+<!-- Use Cases -->
+<g class="uc">
+  <ellipse cx="415" cy="108" rx="170" ry="34"/>
+  <text class="uc-title" x="415" y="103" text-anchor="middle">
+    Load and Prepare Data
+  </text>
+  <text class="uc-sub" x="415" y="122" text-anchor="middle">
+    normalization, encoding, discretization
+  </text>
+</g>
+
+<g class="uc">
+  <ellipse cx="415" cy="210" rx="170" ry="34"/>
+  <text class="uc-title" x="415" y="205" text-anchor="middle">
+    Perform Clustering
+  </text>
+  <text class="uc-sub" x="415" y="224" text-anchor="middle">
+    run algorithms, silhouette selection
+  </text>
+</g>
+
+<g class="uc">
+  <ellipse cx="415" cy="312" rx="170" ry="34"/>
+  <text class="uc-title" x="415" y="307" text-anchor="middle">
+    Visualize Clustering Results
+  </text>
+  <text class="uc-sub" x="415" y="326" text-anchor="middle">
+    PCA, UMAP, cluster profiles
+  </text>
+</g>
+
+<g class="uc">
+  <ellipse cx="415" cy="414" rx="170" ry="34"/>
+  <text class="uc-title" x="415" y="409" text-anchor="middle">
+    Train Bayesian Network
+  </text>
+  <text class="uc-sub" x="415" y="428" text-anchor="middle">
+    structure learning, parameter estimation
+  </text>
+</g>
+
+<g class="uc">
+  <ellipse cx="415" cy="510" rx="170" ry="34"/>
+  <text class="uc-title" x="415" y="505" text-anchor="middle">
+    Predict Academic Group
+  </text>
+  <text class="uc-sub" x="415" y="524" text-anchor="middle">
+    posterior distribution over groups
+  </text>
+</g>
+
+<g class="uc">
+  <ellipse cx="415" cy="590" rx="170" ry="34"/>
+  <text class="uc-title" x="415" y="585" text-anchor="middle">
+    Evaluate Model Quality
+  </text>
+  <text class="uc-sub" x="415" y="604" text-anchor="middle">
+    MAE, RMSE, Accuracy, baseline comparison
+  </text>
+</g>
+
+</svg>
+</div>
+
+</body>
+</html>
